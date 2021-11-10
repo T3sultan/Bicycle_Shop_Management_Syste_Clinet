@@ -1,4 +1,4 @@
-#PROJECT NAME :Niche Product
+#PROJECT NAME : Bicycle Sales
 
 Content : <br/>
   
@@ -20,7 +20,7 @@ Back-End : <br/>
            * Cors<br/>  
            * Nodemon <br/>  
 
-# Niche Product live site  :=><br/>
+#  Bicycle Sales live site  :=><br/>
 
 
 

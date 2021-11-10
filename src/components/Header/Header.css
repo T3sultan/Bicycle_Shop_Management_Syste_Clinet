@@ -1,0 +1,23 @@
+.hospitalTittle{
+    color:rgb(29, 173, 209);
+}
+
+.mineContainer{
+    background-color: rgb(8, 15, 46);
+}
+.headerTitle{
+    color: white;
+}
+.logout{
+    background-color: rgb(8, 15, 46);
+    border-radius: 10px;
+    /* border-color: rgb(8, 15, 46); */
+}
+
+.logoContainer{
+    display: flex;
+}
+/* .logoStyle{
+    width: 100px;
+    
+} */
