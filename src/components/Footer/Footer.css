@@ -1,0 +1,28 @@
+footer{
+    background-color: rgb(41, 15, 65);
+    color: black;
+    min-height: 55vh
+}
+.scrollToTop{
+    background-color: rgb(41, 15, 65);
+    color: black;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: fit-content;
+    padding: 15px 20px;
+    border-radius: 2px;
+    margin: right;
+    box-shadow: rgba(0, 0, 0, 0.9)2px 4px 8px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color:rgba(0, 0, 0, 0.9);
+}
+.title{
+    color: rgb(233, 197, 197);
+}
