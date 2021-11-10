@@ -1,9 +1,12 @@
 import React from 'react';
-import './PageNotFound.css'
+import { Link } from 'react-router-dom';
+import './PageNotFound.css';
+import notFound from '../../images/error/error.jpg'
 const PageNotFound = () => {
     return (
         <div>
-            <h1>Page Not Found</h1>
+            <img style={{ width: "100%",height:"600px" }} src={notFound} alt="" />
+            <Link to="/"><button className="goBack">Go Back</button></Link>
         </div>
     );
 };
