@@ -12,7 +12,7 @@ const Product = ({ product }) => {
             <h2 className="title2 mt-2">{name}</h2>
             <p className="p-1 des">{description.slice(0, 100)}</p>
             <p><small className="price">{price}</small></p>
-            <Link to={`/serviceDetails/${_id}`}>
+            <Link to={`/productDetails/${_id}`}>
             <button style={{ fontSize: "13px" }} className="btn btn-info">Purchase</button>
 
             </Link>

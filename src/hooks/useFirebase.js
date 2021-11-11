@@ -30,6 +30,7 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                console.log(userCredential.user)
                 setAuthError('');
                 const newUser = { email, displayName: name };
 
@@ -109,6 +110,7 @@ const useFirebase = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
             // Sign-out successful.
+            setUser({});
         }).catch((error) => {
             // An error happened.
         })

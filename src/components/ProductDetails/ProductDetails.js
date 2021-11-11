@@ -1,106 +1,170 @@
-import React, { useEffect, useState } from 'react';
-import { Card, Button } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import { useForm } from "react-hook-form";
-import { useHistory } from 'react-router';
-import './ProductDetails.css'
-const ProductDetails = () => {
-    const history = useHistory();
-    const { productsId } = useParams();
-    const [service, setService] = useState({})
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+import useAuth from "../../hooks/useAuth";
+import Grid from '@mui/material/Grid';
+import { Typography, Button, Container } from '@mui/material';
+import Box from '@mui/material/Box';
 
+const verticalCenter = {
+    display: 'flex',
+    alignItems: 'center',
+    height: 400
+}
+
+
+
+const ProductDetails = () => {
+    const [products, setProducts] = useState({});
+    const { user } = useAuth();
+    const { productsId } = useParams();
+    console.log(productsId);
+
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data) => {
+        data.email = user?.email;
+        // data.status = "pending";
+        // fetch("http://localhost:5000/addOrders", {
+        //     method: "POST",
+        //     headers: { "content-type": "application/json" },
+        //     body: JSON.stringify(data),
+        // })
+        //     .then((res) => res.json())
+        //     .then((result) => console.log(result));
+        console.log(data);
+    };
 
     useEffect(() => {
-
-        fetch(`/products.json/${productsId}`)
-            .then(res => res.json())
-            .then(data => setService(data))
-
+        fetch(`http://localhost:5000/singleProducts/${productsId}`)
+            .then((res) => res.json())
+            .then((data) => setProducts(data));
     }, []);
-    const handlePlaceOrder = () => {
-        history.push('/placeorder')
-    }
 
     return (
-        <div>
-            <h2 className="orderPlace">Order Place</h2>
-            <div className="container4 my-4">
+    //     <div>
+    //     <div className="details-container">
+    //       <div className="row container">
+    //         <div className="col-md-6">
+    //           <img className="w-50" src={products.image} alt="" />
+    //           <p>{products?.description}</p>
+    //           <h1>{products?.name}</h1>
+    //           <h1> {products?.price}</h1>
+    //         </div>
+    //         <div className="col-md-6">
+    //           <form onSubmit={handleSubmit(onSubmit)}>
+    //             <input
+    //               {...register("name")}
+    //               placeholder="Name"
+    //               defaultValue={products?.name}
+    //               className="p-2 m-2 w-100 input-field"
+    //             />
+  
+    //             <input
+    //               {...register("description")}
+    //               defaultValue={products?.description}
+    //               placeholder="Description"
+    //               className="p-2 m-2 w-100 input-field"
+    //             />
+  
+    //             <input
+    //               {...register("image", { required: true })}
+    //               placeholder="Image Link"
+    //               defaultValue={products?.image}
+    //               className="p-2 m-2 w-100 input-field"
+    //             />
+  
+    //             <input
+    //               {...register("price", { required: true })}
+    //               placeholder="Price"
+    //               defaultValue={products?.price}
+    //               type="number"
+    //               className="p-2 m-2 w-100 input-field"
+    //             />
+  
+               
+  
+    //             {errors.exampleRequired && <span>This field is required</span>}
+  
+    //             <input
+    //               type="submit"
+    //               value="Order now"
+    //               className="btn btn-info w-50"
+    //             />
+    //           </form>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
 
-                <div className="details1">
 
-                    <Card className="detailsStyle" style={{ width: '30rem', alignItems: 'center' }}>
-                        <Card.Img variant="top" className="w-100" src={service?.image} />
-                        <Card.Title>{service?.description}</Card.Title>
-                        <Card.Body>
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <input
-                                    {...register("title")}
-                                    placeholder="Title"
-                                    className="p-2 m-2 w-100"
-                                    value={service?.title}
 
-                                />
-                                <br />
-                                <input
-                                    {...register("name")}
-                                    placeholder="Name"
-                                    className="p-2 m-2 w-100"
-                                    value={service?.name}
-                                />
-                                <br />
-                                <input
-                                    {...register("email")}
-                                    placeholder="Email"
-                                    className="p-2 m-2 w-100"
-                                    value={service?.email}
-                                />
-                                <br />
-                                <br />
-                                <input
-                                    {...register("address")}
-                                    placeholder="Address"
-                                    className="p-2 m-2 w-100"
-                                    value={service?.address}
-                                />
-                                <br />
-                                <br />
-                                <input
-                                    {...register("city")}
-                                    placeholder="city"
-                                    className="p-2 m-2 w-100"
-                                    value={service?.city}
-                                />
-                                <br />
-                                <input
-                                    {...register("price")}
-                                    placeholder="price"
-                                    className="p-2 m-2 w-100"
-                                    type="number"
-                                    value={service?.price}
-                                />
-                                <br />
-                                <input
-                                    {...register("date")}
-                                    placeholder="Name"
-                                    type="date"
-                                    className="p-2 m-2 w-100"
-                                    value={service?.date}
-                                />
-                                <br />
+        <Container className="my-5" sx={{ flexGrow: 1 }}>
+            <Grid container spacing={3}>
+                <Grid item xs={12} md={6} style={verticalCenter} >
 
-                                {errors.exampleRequired && <span>This field is required</span>}
+                    <Box>
+                        <img style={{ width: '350px' }} src={products.image} alt="" />
+                        <Typography variant="h3">
+                            {products.name}
+                        </Typography>
 
-                                <input onClick={handlePlaceOrder} type="submit" value="Place Order" className="btn btn-info w-100 btnStyle1" />
-                            </form>
-                        </Card.Body>
-                    </Card>
-                </div>
+                    </Box>
+                </Grid>
 
-            </div>
+                <Grid item style={{ ...verticalCenter, textAlign: 'left' }} xs={12} md={6}>
+                    <Box >
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <input
+                                {...register("name")}
+                                placeholder="Name"
+                                defaultValue={products?.name}
+                                className="p-2 m-2 w-100 input-field"
+                            />
 
-        </div>
+                            <input
+                                {...register("description")}
+                                defaultValue={products?.description}
+                                placeholder="Description"
+                                className="p-2 m-2 w-100 input-field"
+                            />
+
+                            <input
+                                {...register("image", { required: true })}
+                                placeholder="Image Link"
+                                defaultValue={products?.image}
+                                className="p-2 m-2 w-100 input-field"
+                            />
+
+                            <input
+                                {...register("price", { required: true })}
+                                placeholder="Price"
+                                defaultValue={products?.price}
+                                type="number"
+                                className="p-2 m-2 w-100 input-field"
+                            />
+                           
+
+                            {errors.exampleRequired && <span>This field is required</span>}
+
+                            <input
+                                type="submit"
+                                value="Order now"
+                                className="btn btn-info w-50"
+                            />
+                        </form>
+                    </Box>
+
+                </Grid>
+
+
+            </Grid>
+        </Container>
     );
 };
 
