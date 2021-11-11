@@ -1,44 +1,46 @@
+
+
 [
     {
         "id": "1",
-        "name": "Double Bed Room",
-        "price": "1000 TK",
-        "imgUrl": "https://i.ibb.co/NrhTypx/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg",
-        "description": "A room assigned to one person. May have one or more beds.The room size or area of Single Rooms are generally between 37 m² to 45 m²."
+        "name": "Litespeed Blade bike",
+        "price": "15000 TK",
+        "imgUrl": "http://www.globalbrandsmagazine.com/wp-content/uploads/2014/02/Litespeed-Blade-bike-300x221.png",
+        "description": "Litespeed bicycle is promoted with so many characteristics that are really remarkable. Before the invention of this bike the titanium was considered as an exotic material. This luxurious bike has unmatched ride quality and its stoutness is comprised of mainly carbon fiber and titanium alloy. This futuristic and high quality bicycle goes very fast and worth almost 15000 BDT"
     },
     {
         "id": "2",
-        "name": "Murphy Room",
-        "price": "1200 TK",
-        "imgUrl": "https://i.ibb.co/72xfvkd/adam-winger-VGs8z60y-T2c-unsplash.jpg",
-        "description": "A room that is fitted with a sofa bed or a Murphy bed (i.e. a bed that folds out of a wall or closet) which can be transformed from a bedroom in the night time to a living room in daytime."
+        "name": "KGS ‘Tier 3’ custom bike",
+        "price": "20000 TK",
+        "imgUrl": "http://www.globalbrandsmagazine.com/wp-content/uploads/2014/02/KGS-Tier-3-300x200.jpg",
+        "description": "Kevin Saunders’ “Tier 3” custom bicycle priced at 20000 BDT is one-of-the-kind custom bicycle that costs almost equivalent to a car comes etched with fine woodwork and comfort riding that adds an immeasurable value to the buyer’s life. Saunders says his high-end KGS bicycles are as exclusive as a Lamborghini, Rolls Royce or Bugatti."
     },
     {
         "id": "3",
-        "name": "Hollywood Twin Room",
-        "price": "1800 TK",
-        "imgUrl": "https://i.ibb.co/3hYJmsh/alexander-kaunas-67-s-Oi7m-VIk-unsplash.jpg",
-        "description": "A room that can accommodate two persons with two twin beds joined together by a common headboard. Most of the budget hotels tend to provide many of these room settings which cater both couples and parties in two."
+        "name": "Montante Luxury Gold Collection",
+        "price": "18000 TK",
+        "imgUrl": "http://www.globalbrandsmagazine.com/wp-content/uploads/2014/02/Montante-Luxury-Gold-Collection-300x187.png",
+        "description": "The Luxury Gold Collection women’s bike from Italian bike maker Montante comes adorned with 24 carat gold leaf coating, python leather finish and 11,000 Swarovski stones. The road brakes, traditional dynamo and leather saddle of impressive design are specific features of this elegant bike that worth 18000 BDT."
     },
     {
         "id": "4",
-        "name": "Mini Suite or Junior Suite",
-        "price": "2000 TK",
-        "imgUrl": "https://i.ibb.co/XpWsPZ7/roberto-nickson-emqn-SQw-QQDo-unsplash-1.jpg",
-        "description": "A Double room with a bed and sitting area. Sometimes the sleeping area is in a bedroom separate from the parlour or living room."
+        "name": "Co. Silver Mounted Lady’s Bicycle",
+        "price": "22000 TK",
+        "imgUrl": "https://www.globalbrandsmagazine.com/wp-content/uploads/2014/02/Rare-Tiffany-Co.-Silver-Mounted-Ladys-Bicycle.jpg",
+        "description": "It is a luxurious and most classy bicycle that was manufactured in 1890 and worth about 22000 .It is a rare expensive bicycle as only few such beautiful and luxurious bicycles were made and one of them belonged to one of the most renowned singers and actresses Lillian Russell of the late 19th century, who was popular for her elegance and beauty and also for stage performance."
     },
     {
         "id": "5",
-        "name": "Connecting Rooms",
-        "price": "1900 TK",
-        "imgUrl": "https://i.ibb.co/VVWbzjC/mark-champs-Id2-IIl1j-OB0-unsplash.jpg",
-        "description": "Rooms with individual entrance doors from the outside and a connecting door between. Guests can move between rooms without going through the hallway."
+        "name": "Chrome Hearts x Cervelo",
+        "price": "19000 TK",
+        "imgUrl": "http://www.globalbrandsmagazine.com/wp-content/uploads/2014/02/cervelo-chrome-hearts-bike-1-300x211.jpg",
+        "description": "Designed in collaboration with Cervélo, one of the the world’s most prestigious bike manufacturers, this bike has been decked out with custom Chrome Hearts graphics, leather, precious metals and rhinestones. Worth about $60,000 and no doubt is an appreciable, luxurious and charming transport."
     },
     {
         "id": "6",
-        "name": " Adjoining Rooms",
-        "price": "3000 TK",
-        "imgUrl": "https://i.ibb.co/CMzJqZC/venice-hotel-tqwvsy-L2-Kd0-unsplash.jpg",
-        "description": "Rooms with a common wall but no connecting door.The room size or area of Adjoining Room Types are generally between 30 m² to 45 m²."
+        "name": "Trek Madone 7- Diamond",
+        "price": "30000 TK",
+        "imgUrl": "http://www.globalbrandsmagazine.com/wp-content/uploads/2014/02/Trek-Madone-300x185.jpg",
+        "description": "This impressive bicycle was formed by the collaboration of Nike, Trek Bikes, jeweler Alan Friedman and artist Lenny Futura and was sold at the Lance Armstrong Foundation annual Gala in 2005 at New York. The bike had a Diamond 7 emblem set in a spoke pattern with sparkling diamonds. There was a Diamond 7 plaque in 14 carat white and yellow gold, which had seven one-carat yellow Gemesis diamonds."
     }
 ]

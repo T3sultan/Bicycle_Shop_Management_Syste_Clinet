@@ -15,7 +15,7 @@ const Products = () => {
 
     return (
         <div id="services">
-            <h2 className="my-5 textStyle">Hotel Room Services</h2>
+            <h2 className="my-5 textStyle">PRODUCTS ARE AVAILABLE</h2>
             {products.length === 0 ?
                 <Spinner animation="border" variant="dark" />
                 :
