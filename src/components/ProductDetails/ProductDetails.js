@@ -3,8 +3,10 @@ import { useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import Grid from '@mui/material/Grid';
-import { Typography, Button, Container } from '@mui/material';
+import { Typography, Button, Container, Alert } from '@mui/material';
 import Box from '@mui/material/Box';
+import './ProductDetails.css'
+import Swal from "sweetalert2";
 
 const verticalCenter = {
     display: 'flex',
@@ -14,11 +16,14 @@ const verticalCenter = {
 
 
 
+
 const ProductDetails = () => {
+
+
     const [products, setProducts] = useState({});
     const { user } = useAuth();
     const { productsId } = useParams();
-    console.log(productsId);
+    // console.log(productsId);
 
     const {
         register,
@@ -30,13 +35,21 @@ const ProductDetails = () => {
     const onSubmit = (data) => {
         data.email = user?.email;
         // data.status = "pending";
-        // fetch("http://localhost:5000/addOrders", {
-        //     method: "POST",
-        //     headers: { "content-type": "application/json" },
-        //     body: JSON.stringify(data),
-        // })
-        //     .then((res) => res.json())
-        //     .then((result) => console.log(result));
+        fetch("http://localhost:5000/placeOrders", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                Swal.fire({
+                   
+                    icon: 'success',
+                    title: 'Successfully has been Order',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            });
         console.log(data);
     };
 
@@ -47,71 +60,20 @@ const ProductDetails = () => {
     }, []);
 
     return (
-    //     <div>
-    //     <div className="details-container">
-    //       <div className="row container">
-    //         <div className="col-md-6">
-    //           <img className="w-50" src={products.image} alt="" />
-    //           <p>{products?.description}</p>
-    //           <h1>{products?.name}</h1>
-    //           <h1> {products?.price}</h1>
-    //         </div>
-    //         <div className="col-md-6">
-    //           <form onSubmit={handleSubmit(onSubmit)}>
-    //             <input
-    //               {...register("name")}
-    //               placeholder="Name"
-    //               defaultValue={products?.name}
-    //               className="p-2 m-2 w-100 input-field"
-    //             />
-  
-    //             <input
-    //               {...register("description")}
-    //               defaultValue={products?.description}
-    //               placeholder="Description"
-    //               className="p-2 m-2 w-100 input-field"
-    //             />
-  
-    //             <input
-    //               {...register("image", { required: true })}
-    //               placeholder="Image Link"
-    //               defaultValue={products?.image}
-    //               className="p-2 m-2 w-100 input-field"
-    //             />
-  
-    //             <input
-    //               {...register("price", { required: true })}
-    //               placeholder="Price"
-    //               defaultValue={products?.price}
-    //               type="number"
-    //               className="p-2 m-2 w-100 input-field"
-    //             />
-  
-               
-  
-    //             {errors.exampleRequired && <span>This field is required</span>}
-  
-    //             <input
-    //               type="submit"
-    //               value="Order now"
-    //               className="btn btn-info w-50"
-    //             />
-    //           </form>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-
-
-
-        <Container className="my-5" sx={{ flexGrow: 1 }}>
-            <Grid container spacing={3}>
+        <Container className="my-5 styleContainer" sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2}>
                 <Grid item xs={12} md={6} style={verticalCenter} >
 
                     <Box>
-                        <img style={{ width: '350px' }} src={products.image} alt="" />
-                        <Typography variant="h3">
+                        <img style={{ width: '300px', borderRadius: '10px' }} src={products.image} alt="" />
+                        <Typography variant="h6">
                             {products.name}
+                        </Typography>
+                        <Typography variant="caption" display="block" gutterBottom>
+                            {products.description}
+                        </Typography>
+                        <Typography variant="h6" gutterBottom>
+                            {products.price} TK
                         </Typography>
 
                     </Box>
@@ -124,39 +86,62 @@ const ProductDetails = () => {
                                 {...register("name")}
                                 placeholder="Name"
                                 defaultValue={products?.name}
-                                className="p-2 m-2 w-100 input-field"
+                                className="p-1 m-1 w-100 input-field"
                             />
-
+                            <input
+                                {...register("title")}
+                                placeholder="Title"
+                                defaultValue={products?.title}
+                                className="p-1 m-1 w-100 input-field"
+                            />
                             <input
                                 {...register("description")}
                                 defaultValue={products?.description}
                                 placeholder="Description"
-                                className="p-2 m-2 w-100 input-field"
+                                className="p-1 m-1 w-100 input-field"
                             />
-
                             <input
                                 {...register("image", { required: true })}
                                 placeholder="Image Link"
                                 defaultValue={products?.image}
-                                className="p-2 m-2 w-100 input-field"
+                                className="p-1 m-1 w-100 input-field"
                             />
-
+                            <input
+                                {...register("phone", { required: true })}
+                                placeholder="Phone Number"
+                                defaultValue={products?.phone}
+                                className="p-1 m-1 w-100 input-field"
+                            />
                             <input
                                 {...register("price", { required: true })}
                                 placeholder="Price"
                                 defaultValue={products?.price}
                                 type="number"
-                                className="p-2 m-2 w-100 input-field"
+                                className="p-1 m-1 w-100 input-field"
                             />
-                           
-
+                            <input
+                                {...register("email", { required: true })}
+                                placeholder="Email"
+                                defaultValue={products?.email}
+                                className="p-1 m-1 w-100 input-field"
+                            />
+                            <input
+                                {...register("address", { required: true })}
+                                placeholder="Address"
+                                defaultValue={products?.address}
+                                className="p-1 m-1 w-100 input-field"
+                            />
                             {errors.exampleRequired && <span>This field is required</span>}
 
                             <input
+
                                 type="submit"
                                 value="Order now"
                                 className="btn btn-info w-50"
                             />
+
+
+
                         </form>
                     </Box>
 

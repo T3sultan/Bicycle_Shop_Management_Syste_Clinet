@@ -35,6 +35,11 @@ const AddProducts = () => {
                                     placeholder="Name"
                                     className="p-2 m-2 w-100 input-field"
                                 />
+                                <input
+                                    {...register("title")}
+                                    placeholder="Title"
+                                    className="p-2 m-2 w-100 input-field"
+                                />
 
                                 <input
                                     {...register("description")}
@@ -54,6 +59,24 @@ const AddProducts = () => {
                                     type="number"
                                     className="p-2 m-2 w-100 input-field"
                                 />
+                                <input
+                                    {...register("phone", { required: true })}
+                                    placeholder="Phone Number"
+                                    className="p-2 m-2 w-100 input-field"
+                                />
+                                 <input
+                                    {...register("address", { required: true })}
+                                    placeholder="Address"
+                                    className="p-2 m-2 w-100 input-field"
+                                />
+                                 <input
+                                    {...register("email", { required: true })}
+                                    placeholder="Email"
+                                    className="p-2 m-2 w-100 input-field"
+                                />
+                                
+
+
 
                               
 

@@ -16,6 +16,7 @@
 }
 .imageUrl{
     height: 250px;
+    border-radius: 0px;
 }
 .des{
     color: grey;
