@@ -1,13 +1,13 @@
 import { Container, Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
-import login from '../../images/login/login.png'
+import login from '../../images/login/undraw_Mobile_login_re_9ntv.png'
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, signInWithGoogle, loginUser, isLoading, authError } = useAuth;
+    const { user, signInWithGoogle, loginUser, isLoading, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
