@@ -25,6 +25,8 @@ const Header = () => {
                         <Navbar.Collapse className="justify-content-end">
                             <Nav.Link style={{ color: '#11CFE5' }} as={HashLink} to="/home">Home</Nav.Link>
                             <Nav.Link style={{ color: '#11CFE5' }} as={HashLink} to="/home#products">Products</Nav.Link>
+                            <Nav.Link style={{ color: '#11CFE5' }} as={HashLink} to="/addProducts">AddProducts</Nav.Link>
+
                             <Nav.Link style={{ color: '#11CFE5' }} as={HashLink} to="/home#brands">Brands</Nav.Link>
                             <Nav.Link style={{ color: '#11CFE5' }} as={HashLink} to="/home#reviews">Reviews</Nav.Link>
 

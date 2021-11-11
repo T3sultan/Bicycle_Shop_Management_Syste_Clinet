@@ -11,6 +11,7 @@ import Register from './components/Register/Register';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AddProducts from './components/AddProducts/AddProducts';
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route exact path='/home'>
               <Home></Home>
+            </Route>
+            <Route exact path='/addProducts'>
+              <AddProducts></AddProducts>
             </Route>
             <Route exact path='/products'>
               <Products></Products>
