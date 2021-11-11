@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "Double Bed Room",
+        "price": "1000 TK",
+        "imgUrl": "https://i.ibb.co/NrhTypx/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg",
+        "description": "A room assigned to one person. May have one or more beds.The room size or area of Single Rooms are generally between 37 m² to 45 m²."
+    },
+    {
+        "id": "2",
+        "name": "Murphy Room",
+        "price": "1200 TK",
+        "imgUrl": "https://i.ibb.co/72xfvkd/adam-winger-VGs8z60y-T2c-unsplash.jpg",
+        "description": "A room that is fitted with a sofa bed or a Murphy bed (i.e. a bed that folds out of a wall or closet) which can be transformed from a bedroom in the night time to a living room in daytime."
+    },
+    {
+        "id": "3",
+        "name": "Hollywood Twin Room",
+        "price": "1800 TK",
+        "imgUrl": "https://i.ibb.co/3hYJmsh/alexander-kaunas-67-s-Oi7m-VIk-unsplash.jpg",
+        "description": "A room that can accommodate two persons with two twin beds joined together by a common headboard. Most of the budget hotels tend to provide many of these room settings which cater both couples and parties in two."
+    },
+    {
+        "id": "4",
+        "name": "Mini Suite or Junior Suite",
+        "price": "2000 TK",
+        "imgUrl": "https://i.ibb.co/XpWsPZ7/roberto-nickson-emqn-SQw-QQDo-unsplash-1.jpg",
+        "description": "A Double room with a bed and sitting area. Sometimes the sleeping area is in a bedroom separate from the parlour or living room."
+    },
+    {
+        "id": "5",
+        "name": "Connecting Rooms",
+        "price": "1900 TK",
+        "imgUrl": "https://i.ibb.co/VVWbzjC/mark-champs-Id2-IIl1j-OB0-unsplash.jpg",
+        "description": "Rooms with individual entrance doors from the outside and a connecting door between. Guests can move between rooms without going through the hallway."
+    },
+    {
+        "id": "6",
+        "name": " Adjoining Rooms",
+        "price": "3000 TK",
+        "imgUrl": "https://i.ibb.co/CMzJqZC/venice-hotel-tqwvsy-L2-Kd0-unsplash.jpg",
+        "description": "Rooms with a common wall but no connecting door.The room size or area of Adjoining Room Types are generally between 30 m² to 45 m²."
+    }
+]

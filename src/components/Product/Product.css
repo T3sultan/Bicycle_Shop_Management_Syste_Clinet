@@ -1,0 +1,14 @@
+.service{
+    background-color: rgb(1, 7, 33);
+    border-radius: 10px;
+}
+.service img{
+    width: 100%;
+}
+.price{
+
+    font-weight: bold;
+}
+.title2{
+    color: rgb(240, 233, 233);
+}

@@ -127,7 +127,7 @@ const ExclusiveFeatures = () => {
     return (
         <div id="brands" className="container1 mt-5">
             <Box sx={{ flexGrow: 1 }}>
-                <h2 style={{ color: "#311b92", fontWeight: "bold" }}>Bicycle Brands</h2>
+                <h2 style={{ color: "#311b92", fontWeight: "bold" }}>BICYCLE BRANDS</h2>
                 <Grid container spacing={{ xs: 3, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {features.map((index) => <Features
                         key={index.img}
