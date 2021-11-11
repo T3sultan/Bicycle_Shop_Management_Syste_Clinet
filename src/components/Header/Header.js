@@ -5,9 +5,11 @@ import { HashLink } from 'react-router-hash-link';
 import './Header.css';
 import Box from '@mui/material/Box';
 import logo from '../../images/logo/cycle.png'
+import useAuth from '../../hooks/useAuth';
 
 
 const Header = () => {
+    const { user, logout } = useAuth();
     return (
 
         <>
@@ -26,23 +28,30 @@ const Header = () => {
                             <Nav.Link style={{ color: '#11CFE5' }} as={HashLink} to="/home#brands">Brands</Nav.Link>
                             <Nav.Link style={{ color: '#11CFE5' }} as={HashLink} to="/home#reviews">Reviews</Nav.Link>
 
-
-                            {/* {
-                                user?.email ? */}
-
-                            <Link style={{ textDecoration: 'none', color: 'white' }} to="/dashboard">
-                                <li style={{ color: '#11CFE5' }} className='logout'>Dashboard</li>
-                            </Link>
+                            {
+                                user?.email ?
+                                    <Box className="logoContainer">
+                                       
+                                    <Nav.Link style={{ color: '#11CFE5' }} as={Link} to="/dashboard">Dashboard</Nav.Link>
 
 
-                            <Button className='logout'>Logout</Button>
+                                        <Button className="logout" onClick={logout}>Logout</Button>
+
+                                    </Box>
 
 
-                            :
-                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">
-                                <Button className='logout'>Login</Button>
-                            </NavLink>
-                            {/* } */}
+                                    :
+
+                                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
+
+                            }
+                            {
+                                user?.email &&
+
+                                <span style={{ color: "white" }}> {user?.displayName} </span>
+
+
+                            }
 
 
 

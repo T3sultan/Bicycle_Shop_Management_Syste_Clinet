@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -27,9 +28,9 @@ function App() {
             <Route exact path='/products'>
               <Products></Products>
             </Route>
-            <Route exact path='/productDetails/:productsId'>
+            <PrivateRoute exact path='/productDetails/:productsId'>
               <ProductDetails></ProductDetails>
-            </Route>
+            </PrivateRoute>
             <Route exact path='/reviews'>
               <Reviews></Reviews>
             </Route>
