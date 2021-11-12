@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -12,6 +11,7 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddProducts from './components/AddProducts/AddProducts';
+// import MyOrders from './components/Dashboard/MyIOrders/MyOrders';
 
 
 function App() {
@@ -21,34 +21,35 @@ function App() {
         <Router>
           <Switch>
             <Route exact path='/'>
-              <Home></Home>
+              <Home />
             </Route>
             <Route exact path='/home'>
-              <Home></Home>
+              <Home />
             </Route>
             <Route exact path='/addProducts'>
-              <AddProducts></AddProducts>
+              <AddProducts />
             </Route>
             <Route exact path='/products'>
-              <Products></Products>
+              <Products />
             </Route>
             <PrivateRoute exact path='/productDetails/:productsId'>
-              <ProductDetails></ProductDetails>
+              <ProductDetails />
             </PrivateRoute>
             <Route exact path='/reviews'>
-              <Reviews></Reviews>
+              <Reviews />
             </Route>
-            <Route exact path='/dashboard'>
-              <Dashboard></Dashboard>
+
+            <Route path='/dashboard'>
+              <Dashboard />
             </Route>
             <Route exact path='/login'>
-              <Login></Login>
+              <Login />
             </Route>
             <Route exact path='/register'>
-              <Register></Register>
+              <Register />
             </Route>
             <Route exact path='*'>
-              <PageNotFound></PageNotFound>
+              <PageNotFound />
             </Route>
 
           </Switch>

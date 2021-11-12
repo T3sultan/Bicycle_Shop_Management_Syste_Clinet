@@ -6,15 +6,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import {
     BrowserRouter as Router,
     Switch,
@@ -23,20 +14,26 @@ import {
     useParams,
     useRouteMatch
 } from "react-router-dom";
-import { Button } from '@mui/material';
-// import DashboardHome from '../DashboardHome/DashboardHome';
-// import MakeAdmin from '../MakeAdmin/MakeAdmin';
-// import AddDoctor from '../AddDoctor/AddDoctor';
-// import useAuth from './../../../hooks/useAuth';
-// import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import MenuIcon from '@mui/icons-material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
-const drawerWidth = 200;
+import { Button } from '@mui/material';
+import MyOrders from './MyIOrders/MyOrders';
+import Reviews from '../Reviews/Reviews';
+import Pay from './Pay/Pay';
+import MangeAllOrders from './MangeAllOrders/MangeAllOrders';
+import AddProducts from '../AddProducts/AddProducts';
+import MakeAdmin from './MakeAdmin/MakeAdmin';
+import ManageProducts from './ManageProducts/ManageProducts';
+
+const drawerWidth = 240;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
     let { path, url } = useRouteMatch();
-    // const { admin } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -46,26 +43,18 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Link to="/appointment"><Button color="inherit">Appointment</Button></Link>
-            <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
-            {/* {
-                admin && <Box> */}
-            <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
-            <Link to={`${url}/addDoctor`}><Button color="inherit">Add Doctor</Button></Link>
-            {/* </Box>
-            } */}
+            <Link to="/home"><Button color="inherit">Home</Button></Link><br />
+            <Link to={`${url}`}><Button color="inherit">Pay</Button></Link><br />
+            <Link to={`${url}/myOrders`}><Button color="inherit">My Order</Button></Link><br />
+            <Link to={`${url}/reviews`}><Button color="inherit">Reviews</Button></Link><br />
+            {/* <Link to="/home"><Button color="inherit">Home</Button></Link><br /> */}
 
+            <Link to={`${url}/manageAllOrders`}><Button color="inherit">Manage All Orders</Button></Link><br />
+            <Link to={`${url}/addProducts`}><Button color="inherit">Add A Products</Button></Link><br />
+            <Link to={`${url}/admin`}><Button color="inherit">Make Admin</Button></Link><br />
+            <Link to={`${url}/manageProducts`}><Button color="inherit">Manage Products</Button></Link><br />
+            
 
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
 
 
         </div>
@@ -135,19 +124,31 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-
-                {/* <Switch>
+                <Switch>
                     <Route exact path={path}>
-                        <DashboardHome></DashboardHome>
+                        <Pay></Pay>
                     </Route>
-                    <AdminRoute path={`${path}/makeAdmin`}>
-                        <MakeAdmin></MakeAdmin>
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/addDoctor`}>
-                        <AddDoctor></AddDoctor>
-                    </AdminRoute>
-                </Switch> */}
+                    <Route path={`${path}/myOrders`}>
+                        <MyOrders></MyOrders>
+                    </Route>
+                    <Route path={`${path}/reviews`}>
+                        <Reviews></Reviews>
+                    </Route>
+                    <Route path={`${path}/manageAllOrders`}>
+                        <MangeAllOrders></MangeAllOrders>
+                    </Route>
 
+                    <Route path={`${path}/addProducts`}>
+                        <AddProducts></AddProducts>
+                    </Route>
+                    <Route path={`${path}/admin`}>
+                        <MakeAdmin></MakeAdmin>
+                    </Route>
+                    <Route path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
+                    </Route>
+
+                </Switch>
 
             </Box>
         </Box>
