@@ -46,6 +46,7 @@ const MyOrders = () => {
                             <th>Email</th>
                             <th>Description</th>
                             <th>Price</th>
+                            <th>Status</th>
                             <th>Action</th>
 
 
@@ -62,6 +63,8 @@ const MyOrders = () => {
                                 <td>{pd?.email}</td>
                                 <td>{pd?.description.slice(0, 20)}</td>
                                 <td>{pd?.price}TK</td>
+                                <td>{pd?.status}...</td>
+                                
 
                                 <button
                                     onClick={() => handleDelete(pd._id)}

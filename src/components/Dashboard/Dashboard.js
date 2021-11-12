@@ -65,14 +65,7 @@ function Dashboard(props) {
             <Link to={`${url}`}><Button color="inherit">Pay</Button></Link><br />
             <Link to={`${url}/myOrders`}><Button color="inherit">My Order</Button></Link><br />
             <Link to={`${url}/reviews`}><Button color="inherit">Reviews</Button></Link><br />
-            {/* <Link to="/home"><Button color="inherit">Home</Button></Link><br /> */}
-            {/* {
-                admin && <Box>
-                    <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
-                    <Link to={`${url}/addDoctor`}><Button color="inherit">Add Doctor</Button></Link>
-                </Box>
-            } */}
-
+       
 
             {isAdmin && <Box>
                 <Link to={`${url}/addProducts`}>

@@ -34,7 +34,7 @@ const ProductDetails = () => {
 
     const onSubmit = (data) => {
         data.email = user?.email;
-        // data.status = "pending";
+        data.status = "pending";
         fetch("http://localhost:5000/placeOrders", {
             method: "POST",
             headers: { "content-type": "application/json" },

@@ -44,6 +44,13 @@ const Review = () => {
           {...register("comments", { required: true })}
         />
         <br />
+        <input
+          className="p-1 w-25 input-field"
+          name="star"
+          placeholder="Star"
+          {...register("star", { required: true })}
+        />
+        <br />
 
         <input
           className="submit-btn btn btn-info mt-3"

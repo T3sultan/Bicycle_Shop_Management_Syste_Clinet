@@ -10,6 +10,7 @@ const Product = ({ product }) => {
         <div className="service pb-3">
             <img className="imageUrl"  src={image} alt="" />
             <h2 className="title2 mt-2">{title}</h2>
+           
             <p className="p-1 des">{description.slice(0, 100)}</p>
             <p><small className="price">{price}</small></p>
             <Link to={`/productDetails/${_id}`}>
