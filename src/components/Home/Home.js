@@ -4,7 +4,7 @@ import ExclusiveFeatures from '../ExclusiveFeatures/ExclusiveFeatures';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Products from '../Products/Products';
-import Reviews from '../Reviews/Reviews';
+import Review from '../Review/Review';
 import './Home.css'
 
 
@@ -14,7 +14,7 @@ const Home = () => {
             <Header></Header>
             <Banner></Banner>
             <Products></Products>
-            <Reviews></Reviews>
+            <Review></Review>
             <ExclusiveFeatures></ExclusiveFeatures>
             <Footer></Footer>
 

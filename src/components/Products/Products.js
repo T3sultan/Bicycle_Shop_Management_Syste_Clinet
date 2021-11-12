@@ -14,7 +14,7 @@ const Products = () => {
     }, [])
 
     return (
-        <div id="services">
+        <div id="products">
             <h2 className="my-5 textStyle">PRODUCTS ARE AVAILABLE</h2>
             {products.length === 0 ?
                 <Spinner animation="border" variant="dark" />
