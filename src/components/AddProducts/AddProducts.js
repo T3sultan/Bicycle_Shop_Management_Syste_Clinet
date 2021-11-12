@@ -31,18 +31,18 @@ const AddProducts = () => {
                         <div className="">
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input
-                                    {...register("name")}
+                                    {...register("name", { required: true })}
                                     placeholder="Name"
                                     className="p-2 m-2 w-100 input-field"
                                 />
                                 <input
-                                    {...register("title")}
+                                    {...register("title", { required: true })}
                                     placeholder="Title"
                                     className="p-2 m-2 w-100 input-field"
                                 />
 
                                 <input
-                                    {...register("description")}
+                                    {...register("description" , { required: true })}
                                     placeholder="Description"
                                     className="p-2 m-2 w-100 input-field"
                                 />

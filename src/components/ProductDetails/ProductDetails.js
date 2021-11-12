@@ -83,19 +83,19 @@ const ProductDetails = () => {
                     <Box >
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input
-                                {...register("name")}
+                                {...register("name",{ required: true })}
                                 placeholder="Name"
                                 defaultValue={products?.name}
                                 className="p-1 m-1 w-100 input-field"
                             />
                             <input
-                                {...register("title")}
+                                {...register("title",{ required: true })}
                                 placeholder="Title"
                                 defaultValue={products?.title}
                                 className="p-1 m-1 w-100 input-field"
                             />
                             <input
-                                {...register("description")}
+                                {...register("description",{ required: true })}
                                 defaultValue={products?.description}
                                 placeholder="Description"
                                 className="p-1 m-1 w-100 input-field"
