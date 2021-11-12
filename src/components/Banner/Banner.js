@@ -29,7 +29,7 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <h3 className="first">EXPLORE THE THIS BRAND</h3>
-                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home">
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/explore">
                             <Button variant="contained">EXPLORE PRODUCTS</Button>
                         </NavLink>
 
@@ -47,7 +47,7 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <h3>EXPLORE THE THIS BRAND</h3>
-                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home">
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/explore">
                             <Button variant="contained">EXPLORE PRODUCTS</Button>
                         </NavLink>
 
@@ -62,7 +62,7 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <h3>EXPLORE THE THIS BRAND</h3>
-                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home">
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/explore">
                             <Button variant="contained">EXPLORE PRODUCTS</Button>
                         </NavLink>
 
@@ -77,7 +77,7 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <h3>EXPLORE THE THIS BRAND</h3>
-                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home">
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/explore">
                             <Button variant="contained">EXPLORE PRODUCTS</Button>
                         </NavLink>
 
@@ -92,7 +92,7 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <h3>EXPLORE THE THIS BRAND</h3>
-                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home">
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/explore">
                             <Button variant="contained">EXPLORE PRODUCTS</Button>
                         </NavLink>
 
@@ -107,7 +107,7 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <h3>EXPLORE THE THIS BRAND</h3>
-                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home">
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/explore">
                             <Button variant="contained">EXPLORE PRODUCTS</Button>
                         </NavLink>
 

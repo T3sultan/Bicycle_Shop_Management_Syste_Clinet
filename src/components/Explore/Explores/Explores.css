@@ -1,0 +1,23 @@
+.service11{
+    background-color: rgb(211, 212, 216);
+    border-radius: 5px;
+}
+.service11 img{
+    width: 100%;
+}
+.price1{
+
+    font-weight: bold;
+    color: rgb(24, 11, 11);
+}
+.title22{
+    color: rgb(43, 38, 38);
+    font-size: 18px;
+}
+.imageUrl22{
+    height: 250px;
+    border-radius: 0px;
+}
+.des22{
+    color: grey;
+}

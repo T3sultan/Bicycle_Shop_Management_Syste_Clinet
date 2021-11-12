@@ -1,34 +1,34 @@
 import React from 'react';
-import './Products.css'
+import './Explore.css'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Spinner } from 'react-bootstrap';
-import Product from '../Product/Product';
+import Explores from './Explores/Explores';
 
-const Products = () => {
-    const [products, setProducts] = useState([]);
+const Explore = () => {
+    const [explores, setExplores] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/allProducts')
             .then(res => res.json())
-            .then(data => setProducts(data.slice(0,6)))
+            .then(data => setExplores(data.slice(6,20)))
     }, [])
 
     return (
         <div id="products">
-            <h2 className="my-5 textStyle">PRODUCTS ARE AVAILABLE</h2>
-            {products.length === 0 ?
+            <h2 className="my-5 textStyle">All PRODUCTS</h2>
+            {explores.length === 0 ?
                 <Spinner animation="border" variant="dark" />
                 :
 
                 <div className="container">
                     {
 
-                        products.map(product => <Product
-                            key={product.name}
-                            product={product}
+                        explores.map(explore => <Explores
+                            key={explore.name}
+                            explore={explore}
                         >
 
-                        </Product>)
+                        </Explores>)
                     }
                 </div>
             }
@@ -36,4 +36,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Explore;

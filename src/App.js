@@ -11,6 +11,7 @@ import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddProducts from './components/AddProducts/AddProducts';
 import Review from './components/Reviews/Reviews';
+import Explore from './components/Explore/Explore';
 // import MyOrders from './components/Dashboard/MyIOrders/MyOrders';
 
 
@@ -37,6 +38,9 @@ function App() {
             </PrivateRoute>
             <Route exact path='/review'>
               <Review />
+            </Route>
+            <Route exact path='/explore'>
+              <Explore />
             </Route>
 
             <Route path='/dashboard'>
