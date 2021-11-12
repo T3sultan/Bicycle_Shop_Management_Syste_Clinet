@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -17,7 +17,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
+import { HashLink } from 'react-router-hash-link';
 import { Button } from '@mui/material';
 import MyOrders from './MyIOrders/MyOrders';
 import Reviews from '../Reviews/Reviews';
@@ -26,14 +26,32 @@ import MangeAllOrders from './MangeAllOrders/MangeAllOrders';
 import AddProducts from '../AddProducts/AddProducts';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import ManageProducts from './ManageProducts/ManageProducts';
+import useAuth from './../../hooks/useAuth';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
+    const { user, logout } = useAuth();
+    const [isAdmin, setIsAdmin] = useState(false);
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-
     let { path, url } = useRouteMatch();
+    useEffect(() => {
+        fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (data[0]?.role === "admin") {
+                    setIsAdmin(true);
+                } else {
+                    setIsAdmin(false);
+                }
+            });
+    }, [user?.email]);
+    console.log(isAdmin);
+
+
+
+
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -48,12 +66,34 @@ function Dashboard(props) {
             <Link to={`${url}/myOrders`}><Button color="inherit">My Order</Button></Link><br />
             <Link to={`${url}/reviews`}><Button color="inherit">Reviews</Button></Link><br />
             {/* <Link to="/home"><Button color="inherit">Home</Button></Link><br /> */}
+            {/* {
+                admin && <Box>
+                    <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
+                    <Link to={`${url}/addDoctor`}><Button color="inherit">Add Doctor</Button></Link>
+                </Box>
+            } */}
 
-            <Link to={`${url}/manageAllOrders`}><Button color="inherit">Manage All Orders</Button></Link><br />
-            <Link to={`${url}/addProducts`}><Button color="inherit">Add A Products</Button></Link><br />
-            <Link to={`${url}/admin`}><Button color="inherit">Make Admin</Button></Link><br />
-            <Link to={`${url}/manageProducts`}><Button color="inherit">Manage Products</Button></Link><br />
-            
+
+            {isAdmin && <Box>
+                <Link to={`${url}/addProducts`}>
+                    <Button className="inherit">Add A Products</Button>
+                </Link>
+                <Link to={`${url}/manageAllOrders`}>
+                    <Button color="inherit">Manage All Orders</Button>
+                </Link><br />
+                <Link to={`${url}/admin`}>
+                    <Button color="inherit">Make Admin</Button>
+                </Link><br />
+                <Link to={`${url}/manageProducts`}>
+                    <Button color="inherit">Manage Products</Button>
+                </Link><br />
+            </Box>
+
+
+            }
+
+            <Link as={HashLink} to="/home"> <Button onClick={logout}>Logout</Button></Link><br />
+
 
 
 

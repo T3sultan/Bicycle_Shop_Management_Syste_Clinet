@@ -32,7 +32,7 @@ const Review = () => {
         <input
           className=" p-1 w-25 input-field"
           name="name"
-          value={user?.name}
+          defaultValue={user?.name}
           type="name"
           {...register("name", { required: true })}
         />
