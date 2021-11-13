@@ -1,6 +1,6 @@
 #PROJECT NAME : Bicycle Sales
 
-Content : <br/>
+We're a full-service bike shop specializing in refurbished bicycles and a nonprofit youth employment program - all rolled into one!
   
 Font-End : <br/> 
            * React Bootstrap<br/>
