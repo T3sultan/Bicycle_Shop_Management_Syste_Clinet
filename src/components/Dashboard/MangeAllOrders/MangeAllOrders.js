@@ -50,7 +50,7 @@ const MangeAllOrders = () => {
 
     return (
         <div>
-            <h1>All orders {orders.length}</h1>
+            <h1>Manage All Orders {orders.length}</h1>
 
             <Table striped bordered hover>
                 <thead>

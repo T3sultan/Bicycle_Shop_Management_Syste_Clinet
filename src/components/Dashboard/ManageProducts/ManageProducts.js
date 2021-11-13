@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ManageProducts'
 import { Spinner, Table } from 'react-bootstrap';
-
+import Swal from "sweetalert2";
 
 const ManageProducts = () => {
 
@@ -20,7 +20,15 @@ const ManageProducts = () => {
             .then(data => {
                 console.log(data);
                 if (data.deletedCount > 0) {
-                    alert('successfully deleted')
+                    // alert('successfully deleted')
+                    Swal.fire({
+
+                        icon: 'success',
+                        title: 'Successfully Deleted',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                   
                     const remaining = products.filter(service => service._id !== id)
                     setProducts(remaining);
                 }
@@ -41,8 +49,8 @@ const ManageProducts = () => {
                             <th>Title</th>
                             <th>Email</th>
                             <th>Description</th>
+
                             <th>Price</th>
-                            <th>Status</th>
                             <th>Action</th>
 
 
@@ -59,7 +67,7 @@ const ManageProducts = () => {
                                 <td>{pd?.email}</td>
                                 <td>{pd?.description.slice(0, 20)}</td>
                                 <td>{pd?.price}TK</td>
-                                <td>{pd?.status}...</td>
+
 
 
                                 <button

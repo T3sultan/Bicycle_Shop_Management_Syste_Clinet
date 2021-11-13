@@ -61,10 +61,10 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Link to="/home"><Button color="inherit">Home</Button></Link><br />
-            <Link to={`${url}`}><Button color="inherit">Pay</Button></Link><br />
+            <Link to="/home"><Button color="inherit">Home</Button></Link><br />     
             <Link to={`${url}/myOrders`}><Button color="inherit">My Order</Button></Link><br />
             <Link to={`${url}/reviews`}><Button color="inherit">Reviews</Button></Link><br />
+            <Link to={`${url}`}><Button color="inherit">Payment</Button></Link><br />
        
 
             {isAdmin && <Box>
