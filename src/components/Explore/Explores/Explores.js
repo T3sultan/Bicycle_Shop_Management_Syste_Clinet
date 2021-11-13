@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Explores.css'
 
 const Explores = ({ explore }) => {
-    const { name, description, image, price, title, _id } = explore;
+    const { description, image, price, title, _id } = explore;
 
     return (
         <div className="service11 pb-3">

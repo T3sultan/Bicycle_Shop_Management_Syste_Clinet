@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import './Reviews.css'
 
 const Review = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const { user } = useAuth();
   const onSubmit = (data) => {
     fetch("http://localhost:5000/addReview", {

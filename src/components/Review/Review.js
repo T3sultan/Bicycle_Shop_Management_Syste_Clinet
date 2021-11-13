@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Grid from '@mui/material/Grid';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import { Spinner } from 'react-bootstrap';
 

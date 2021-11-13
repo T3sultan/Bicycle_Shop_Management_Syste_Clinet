@@ -4,7 +4,7 @@ import './Product.css'
 
 
 const Product = ({ product }) => {
-    const {name, description, image, price, title,_id } = product;
+    const {description, image, price, title,_id } = product;
 
     return (
         <div className="service pb-3">

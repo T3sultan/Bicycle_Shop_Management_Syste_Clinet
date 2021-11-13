@@ -6,10 +6,10 @@ const MangeAllOrders = () => {
     const [orders, setOrders] = useState([]);
     const { register, handleSubmit } = useForm();
 
-    const [status, setStatus] = useState("");
+    // const [status, setStatus] = useState("");
     const [orderId, setOrderId] = useState("");
 
-    console.log(status);
+    // console.log(status);
     useEffect(() => {
         fetch("http://localhost:5000/allOrders")
             .then((res) => res.json())

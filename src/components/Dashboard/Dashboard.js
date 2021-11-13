@@ -7,11 +7,11 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import {
-    BrowserRouter as Router,
+    
     Switch,
     Route,
     Link,
-    useParams,
+
     useRouteMatch
 } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';

@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import Grid from '@mui/material/Grid';
-import { Typography, Button, Container, Alert } from '@mui/material';
+import { Typography, Container } from '@mui/material';
 import Box from '@mui/material/Box';
 import './ProductDetails.css'
 import Swal from "sweetalert2";
@@ -28,7 +28,7 @@ const ProductDetails = () => {
     const {
         register,
         handleSubmit,
-        watch,
+       
         formState: { errors },
     } = useForm();
 
@@ -57,7 +57,7 @@ const ProductDetails = () => {
         fetch(`http://localhost:5000/singleProducts/${productsId}`)
             .then((res) => res.json())
             .then((data) => setProducts(data));
-    }, []);
+    }, [productsId]);
 
     return (
         <Container className="my-5 styleContainer" sx={{ flexGrow: 1 }}>

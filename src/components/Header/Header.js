@@ -1,10 +1,9 @@
 import React from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import './Header.css';
 import Box from '@mui/material/Box';
-import logo from '../../images/logo/cycle.png'
 import useAuth from '../../hooks/useAuth';
 
 

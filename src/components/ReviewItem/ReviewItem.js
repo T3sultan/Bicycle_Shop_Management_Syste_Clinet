@@ -1,4 +1,3 @@
-import { Grid } from '@mui/material';
 import React from 'react';
 import './ReviewItem.css'
 import Icon from '@mui/material/Icon';

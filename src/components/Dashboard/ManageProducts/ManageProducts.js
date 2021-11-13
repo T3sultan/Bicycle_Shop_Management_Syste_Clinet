@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ManageProducts'
-import { Spinner, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import Swal from "sweetalert2";
 
 const ManageProducts = () => {

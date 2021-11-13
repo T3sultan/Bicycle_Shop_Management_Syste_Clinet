@@ -3,7 +3,7 @@ import React from 'react';
 import './Features.css'
 
 const Features = ({ index }) => {
-    const { img, name } = index;
+    const { img } = index;
     return (
         <Grid item xs={4} sm={4} md={4} >
 
