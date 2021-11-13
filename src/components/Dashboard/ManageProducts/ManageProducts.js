@@ -1,9 +1,80 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import './ManageProducts'
+import { Spinner, Table } from 'react-bootstrap';
+
 
 const ManageProducts = () => {
+
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/allProducts')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, []);
+    const handleDelete = id => {
+        //const url = ;
+        fetch(`http://localhost:5000/manageProducts/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    alert('successfully deleted')
+                    const remaining = products.filter(service => service._id !== id)
+                    setProducts(remaining);
+                }
+            })
+    }
+
+
     return (
         <div>
-            <h1>Manage Products</h1>
+            <h2>Manage Products:{products.length}</h2>
+
+            <div>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>User Name</th>
+                            <th>Title</th>
+                            <th>Email</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+
+
+
+                        </tr>
+                    </thead>
+                    {products?.map((pd, index) => (
+                        <tbody>
+                            <tr>
+                                <td>{index}</td>
+                                <td>{pd?.name}</td>
+                                <td>{pd?.title}</td>
+                                <td>{pd?.email}</td>
+                                <td>{pd?.description.slice(0, 20)}</td>
+                                <td>{pd?.price}TK</td>
+                                <td>{pd?.status}...</td>
+
+
+                                <button
+                                    onClick={() => handleDelete(pd._id)}
+                                    className="btn bg-danger p-1"
+                                >
+                                    Remove
+                                </button>
+                                {/* <Link to={`/services/update/${pd._id}`}> <button className="btn bg-warning">update</button> </Link> */}
+                            </tr>
+                        </tbody>
+                    ))}
+                </Table>
+
+            </div>
         </div>
     );
 };
