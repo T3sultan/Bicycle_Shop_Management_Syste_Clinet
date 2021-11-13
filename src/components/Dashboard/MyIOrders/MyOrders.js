@@ -9,14 +9,14 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrder/${user?.email}`)
+        fetch(`https://immense-peak-90698.herokuapp.com/myOrder/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, [user?.email]);
 
     const handleDelete = id => {
         //const url = ;
-        fetch(`http://localhost:5000/myOrder/${id}`, {
+        fetch(`https://immense-peak-90698.herokuapp.com/myOrder/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -35,7 +35,7 @@ const ProductDetails = () => {
     const onSubmit = (data) => {
         data.email = user?.email;
         data.status = "pending";
-        fetch("http://localhost:5000/placeOrders", {
+        fetch("https://immense-peak-90698.herokuapp.com/placeOrders", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -54,7 +54,7 @@ const ProductDetails = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleProducts/${productsId}`)
+        fetch(`https://immense-peak-90698.herokuapp.com/singleProducts/${productsId}`)
             .then((res) => res.json())
             .then((data) => setProducts(data));
     }, [productsId]);

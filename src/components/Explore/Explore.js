@@ -8,7 +8,7 @@ import Explores from './Explores/Explores';
 const Explore = () => {
     const [explores, setExplores] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allProducts')
+        fetch('https://immense-peak-90698.herokuapp.com/allProducts')
             .then(res => res.json())
             .then(data => setExplores(data.slice(6,20)))
     }, [])

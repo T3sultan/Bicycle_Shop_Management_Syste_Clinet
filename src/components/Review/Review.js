@@ -6,7 +6,7 @@ import { Spinner } from 'react-bootstrap';
 const Review = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviewItem')
+        fetch('https://immense-peak-90698.herokuapp.com/reviewItem')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
