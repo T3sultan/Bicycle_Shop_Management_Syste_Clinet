@@ -1,17 +1,17 @@
 import React from "react";
-import './MakeAdmin'
+import "./MakeAdmin";
 import { useForm } from "react-hook-form";
 const MakeAdmin = () => {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data) => {
-    fetch("https://immense-peak-90698.herokuapp.com/makeAdmin", {
+  const onSubmit = data => {
+    fetch("https://biycle-sales000001.onrender.com/makeAdmin", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
     })
-      .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then(res => res.json())
+      .then(result => console.log(result));
     console.log(data);
   };
   return (

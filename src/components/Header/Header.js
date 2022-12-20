@@ -15,7 +15,7 @@ const Header = () => {
             <Navbar className="mineContainer" collapseOnSelect expand="lg" sticky="top" variant="dark">
                 <Container className="container">
 
-                    <Navbar.Brand href="#home" style={{ color: '#11CFE5' }} className="hospitalTittle"> Bicycle Sales</Navbar.Brand>
+                    <Navbar.Brand href="#home" style={{ color: '#11CFE5' }} className="hospitalTittle"> Bicycle Shop Management System</Navbar.Brand>
 
 
 

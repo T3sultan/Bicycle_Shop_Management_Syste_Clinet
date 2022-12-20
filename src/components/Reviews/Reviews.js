@@ -1,19 +1,19 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
-import './Reviews.css'
+import "./Reviews.css";
 
 const Review = () => {
   const { register, handleSubmit } = useForm();
   const { user } = useAuth();
-  const onSubmit = (data) => {
-    fetch("https://immense-peak-90698.herokuapp.com/addReview", {
+  const onSubmit = data => {
+    fetch("https://biycle-sales000001.onrender.com/addReview", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
     })
-      .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then(res => res.json())
+      .then(result => console.log(result));
 
     console.log(data);
   };
